@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Text} from 'react-native';
 import gematriya from 'gematriya';
 import TouchableText from './TouchableText';
 
@@ -12,7 +12,7 @@ class BlockChapterText extends React.Component {
 
   render() {
     return (
-      <View>
+      <Text style={{flexDirection: 'row-reverse', flexWrap: 'wrap'}}>
         {this.props.text.map((line, index) => {
           let lineNum = this.props.isHebrew
             ? gematriya(index + 1, {punctuate: false})
@@ -32,7 +32,7 @@ class BlockChapterText extends React.Component {
             />
           );
         })}
-      </View>
+      </Text>
     );
   }
 

@@ -1,13 +1,23 @@
 [
     {
-        "title": "chapter",
+        "title": "kabbsh",
         "iconName": "cog",
         "nextScreen": "ChapterMenu"
     },
     {
-        "title": "chapter",
+        "title": "shach",
         "iconName": "cog",
-        "nextScreen": "SectionMenu"
+        "nextScreen": "ChapterMenu"
+    },
+    {
+        "title": "musaf",
+        "iconName": "music",
+        "nextScreen": "ChapterMenu"
+    },
+    {
+        "title": "mincha",
+        "iconName": "music",
+        "nextScreen": "ChapterMenu"
     },
     {
         "title": "playlist",

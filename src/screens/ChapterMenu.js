@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList, StyleSheet, Dimensions} from 'react-native';
+import { View, Text, FlatList, StyleSheet, Dimensions } from 'react-native';
 import gematriya from 'gematriya';
 import * as strings from '../utils/strings.json';
 import FontAwesomeButton from '../components/FontAwesomeButton';
@@ -18,30 +18,19 @@ class ChapterMenu extends React.Component {
 
   render() {
     return (
-      <View
-        onLayout={() => {
-          const { width } = Dimensions.get('window');
-          this.setState({
-            numColumns: Math.floor(width / this.buttonWidth),
-          });
-        }}>
+      <View>
         {this.props.route.params.chapterList.chapters.length < 1 ? (
           <Text style={styles.errorText}>
             There aren't any chapters in this list.
           </Text>
         ) : (
           <FlatList
-            columnWrapperStyle={styles.buttonContainer}
             data={this.props.route.params.chapterList.chapters}
-            numColumns={this.state.numColumns}
             keyExtractor={(item, index) => index.toString()}
             key={this.state.numColumns}
-            renderItem={({item, index}) => {
+            renderItem={({ item, index }) => {
               return (
-                <View style={{
-                  width: this.buttonWidth,
-                  padding: 5,
-                }}>
+                <View>
                   <FontAwesomeButton
                     onPress={() => {
                       this.props.navigation.navigate('Chapter', {

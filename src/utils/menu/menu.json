@@ -1,18 +1,138 @@
 {
-    "section":
+    "kabbsh":
         {
-            "title": "title",
+            "title": "Kabbalat Shabbat",
             "chapters": [
                 {
-                    "collection": "collection",
-                    "title": "Chapter",
+                    "collection": "kabbsh",
+                    "title": "Kabbalat Shabbat",
                     "chapterNum": 1
                 },
                 {
-                    "collection": "collection",
-                    "title": "Chapter",
-                    "chapterNum": 1
+                    "collection": "kabbsh",
+                    "title": "Birchot Kriat Shema",
+                    "chapterNum": 2
+                },
+                {
+                    "collection": "kabbsh",
+                    "title": "Vayichulu",
+                    "chapterNum": 3
                 }
             ]
-        }
+        },
+    "shach": {
+        "title": "Shacharit",
+        "chapters": [
+            {
+                "collection": "shach",
+                "title": "Shochen Ad",
+                "chapterNum": 1
+            },
+            {
+                "collection": "shach",
+                "title": "Birchot Kriat Shema",
+                "chapterNum": 2
+            },
+            {
+                "collection": "shach",
+                "title": "Chazarat Hashatz - Avot",
+                "chapterNum": 3
+            },
+            {
+                "collection": "shach",
+                "title": "Chazarat Hashatz - Kedushat Hayom",
+                "chapterNum": 4
+            },
+            {
+                "collection": "shach",
+                "title": "Chazarat Hashatz - Hodaah",
+                "chapterNum": 5
+            },
+            {
+                "collection": "shach",
+                "title": "Hotzaat Sefer Torah",
+                "chapterNum": 6
+            }
+        ]
+    },
+    "musaf": {
+        "title": "Mussaf",
+        "chapters": [
+            {
+                "collection": "musaf",
+                "title": "Yikum Porkan",
+                "chapterNum": 1
+            },
+            {
+                "collection": "musaf",
+                "title": "Birkat Hachodesh",
+                "chapterNum": 8
+            },
+            {
+                "collection": "musaf",
+                "title": "Chazarat Hashatz - Avot",
+                "chapterNum": 2
+            },
+            {
+                "collection": "musaf",
+                "title": "Chazarat Hashatz - Kedushat Hayom",
+                "chapterNum": 3
+            },
+            {
+                "collection": "musaf",
+                "title": "Chazarat Hashatz - Hodaah",
+                "chapterNum": 4
+            },
+            {
+                "collection": "musaf",
+                "title": "Chazarat Hashatz - Kedushat Hayom (Rosh Chodesh)",
+                "chapterNum": 6
+            },
+            {
+                "collection": "musaf",
+                "title": "Chazarat Hashatz - Hodaah (Rosh Chodesh)",
+                "chapterNum": 7
+            },
+            {
+                "collection": "musaf",
+                "title": "Pitum Haketoret",
+                "chapterNum": 5
+            }
+        ]
+    },
+    "mincha": {
+        "title": "Mincha",
+        "chapters": [
+            {
+                "collection": "mincha",
+                "title": "Ashrei",
+                "chapterNum": 1
+            },
+            {
+                "collection": "mincha",
+                "title": "Chazarat Hashatz - Avot",
+                "chapterNum": 2
+            },
+            {
+                "collection": "mincha",
+                "title": "Chazarat Hashatz - Kedushat Hayom",
+                "chapterNum": 3
+            },
+            {
+                "collection": "mincha",
+                "title": "Chazarat Hashatz - Hodaah",
+                "chapterNum": 4
+            },
+            {
+                "collection": "mincha",
+                "title": "Chazarat Hashatz - Sim Shalom",
+                "chapterNum": 5
+            },
+            {
+                "collection": "mincha",
+                "title": "Tzidkatcha",
+                "chapterNum": 6
+            }
+        ]
+    }
 }

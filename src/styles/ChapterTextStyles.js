@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Ezra SIL SR',
   },
+  pressed: {
+    color: 'lightgray',
+  },
   selected: {
     color: 'black',
   },

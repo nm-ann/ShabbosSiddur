@@ -301,8 +301,8 @@ class Chapter extends React.Component {
     let settings = await SettingsUtils.getSettings();
 
     await this.setStateAsync({
-      hebrewOnly: settings.hebrew,
-      blockText: settings.block,
+      hebrewOnly: true, // there is no english for this app
+      blockText: settings.block, // there is no english for this app
       ashk: settings.ashk,
     });
   }
@@ -398,7 +398,7 @@ class Chapter extends React.Component {
       this.setState({
         number: file.chapterNumber,
         hebrew: file.hebrewText,
-        english: file.englishText,
+        english: '',
         splitsAshk: file.splitsAshk,
         splitsSeph: file.splitsSeph,
         audioUri: audioURI,
