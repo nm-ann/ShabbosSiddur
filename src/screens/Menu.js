@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, FlatList, StyleSheet, ActivityIndicator} from 'react-native';
-import FontAwesomeButton from '../components/FontAwesomeButton';
+import MaterialButton from '../components/MaterialButton';
 import * as strings from '../utils/strings.json';
 import * as menuItems from '../utils/menu/menu.json';
 import colors from '../styles/colors.json';
@@ -30,7 +30,7 @@ class Menu extends React.Component {
             keyExtractor={(item, index) => index.toString()}
             renderItem={({item}) => {
               return (
-                <FontAwesomeButton
+                <MaterialButton
                   text={strings[item.title]}
                   iconName={item.iconName}
                   iconSize={28}

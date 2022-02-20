@@ -1,27 +1,27 @@
 [
     {
         "title": "kabbsh",
-        "iconName": "cog",
+        "iconName": "candle",
         "nextScreen": "ChapterMenu"
     },
     {
         "title": "shach",
-        "iconName": "cog",
+        "iconName": "weather-sunset-up",
         "nextScreen": "ChapterMenu"
     },
     {
         "title": "musaf",
-        "iconName": "music",
+        "iconName": "campfire",
         "nextScreen": "ChapterMenu"
     },
     {
         "title": "mincha",
-        "iconName": "music",
+        "iconName": "weather-sunset-down",
         "nextScreen": "ChapterMenu"
     },
     {
         "title": "playlist",
-        "iconName": "music",
+        "iconName": "playlist-music",
         "nextScreen": "SectionMenu"
     },
     {
