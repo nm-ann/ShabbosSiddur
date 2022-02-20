@@ -130,8 +130,6 @@ class AddToPlaylist extends React.Component {
                         title: this.props.route.params.title,
                         chapterNum: this.props.route.params.chapterNum,
                       });
-                      this.loadPlaylists();
-                      this.closeModal();
                       this.props.navigation.goBack();
                     }}
                     text={item.title}
