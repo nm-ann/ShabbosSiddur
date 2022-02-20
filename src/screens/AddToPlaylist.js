@@ -52,7 +52,7 @@ class AddToPlaylist extends React.Component {
                 borderBottomWidth: 1,
                 padding: 0,
               }}
-              onChangeText={(value) => this.setState({name: value})}
+              onChangeText={value => this.setState({name: value})}
               value={this.state.name}
             />
             <View
@@ -86,7 +86,7 @@ class AddToPlaylist extends React.Component {
                     // if the playlist already exists
                     if (
                       this.state.playlists.findIndex(
-                        (e) => e.title === this.state.name.trim(),
+                        e => e.title === this.state.name.trim(),
                       ) !== -1
                     ) {
                       alert('That playlist already exists.');
@@ -124,12 +124,14 @@ class AddToPlaylist extends React.Component {
               return (
                 <View style={styles.buttonContainer} key={index}>
                   <FontAwesomeButton
-                    onPress={() => {
-                      Playlist.addItemToPlaylist(item.title, {
+                    onPress={async () => {
+                      await Playlist.addItemToPlaylist(item.title, {
                         collection: this.props.route.params.collection,
                         title: this.props.route.params.title,
                         chapterNum: this.props.route.params.chapterNum,
                       });
+                      this.loadPlaylists();
+                      this.closeModal();
                       this.props.navigation.goBack();
                     }}
                     text={item.title}
@@ -160,7 +162,7 @@ class AddToPlaylist extends React.Component {
   }
 
   loadPlaylists() {
-    Playlist.getAllPlaylists().then((playlists) => {
+    Playlist.getAllPlaylists().then(playlists => {
       this.setState({
         playlists: playlists,
         isLoaded: true,
