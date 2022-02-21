@@ -38,6 +38,7 @@ class App extends React.Component {
                 headerTitleAlign: 'center',
                 headerTitle: () => <MainScreenHeader />,
                 headerTintColor: colors.secondary,
+                headerBackTitle: '',
               };
             }}
           />
@@ -50,6 +51,7 @@ class App extends React.Component {
               headerTitleStyle: styles.headerText,
               headerTitleAlign: 'center',
               headerTintColor: colors.secondary,
+              headerBackTitle: '',
             })}
           />
           <Screen
@@ -61,6 +63,7 @@ class App extends React.Component {
               headerTitleStyle: styles.headerText,
               headerTitleAlign: 'center',
               headerTintColor: colors.secondary,
+              headerBackTitle: '',
             })}
           />
           <Screen
@@ -72,6 +75,7 @@ class App extends React.Component {
               headerTitleStyle: styles.headerText,
               headerTitleAlign: 'center',
               headerTintColor: colors.secondary,
+              headerBackTitle: '',
             })}
           />
           <Screen
@@ -85,6 +89,7 @@ class App extends React.Component {
               headerTitleStyle: styles.headerText,
               headerTitleAlign: 'center',
               headerTintColor: colors.secondary,
+              headerBackTitle: '',
             })}
           />
           <Screen
@@ -96,6 +101,7 @@ class App extends React.Component {
               headerTitleStyle: styles.headerText,
               headerTitleAlign: 'center',
               headerTintColor: colors.secondary,
+              headerBackTitle: '',
             })}
           />
           <Screen
@@ -108,6 +114,7 @@ class App extends React.Component {
                 headerTitleStyle: styles.headerText,
                 headerTitleAlign: 'center',
                 headerTintColor: colors.secondary,
+                headerBackTitle: '',
               };
             }}
           />

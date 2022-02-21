@@ -13,6 +13,7 @@ class TouchableText extends React.Component {
   render() {
     return (
       <Text
+        suppressHighlighting={true}
         // initial press
         onResponderGrant={() => {
           this.setState({isPressed: true});
