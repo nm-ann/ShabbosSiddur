@@ -18,6 +18,7 @@ class SettingsCard extends React.Component {
             text={this.props.leftText ? this.props.leftText : undefined}
             iconName={this.props.leftIcon ? this.props.leftIcon : undefined}
             iconSize={40}
+            iconStyle={styles.buttonText}
             buttonStyle={
               this.props.leftSelected
                 ? {...styles.button, ...styles.buttonSelected}
@@ -30,6 +31,7 @@ class SettingsCard extends React.Component {
             text={this.props.rightText ? this.props.rightText : ''}
             iconName={this.props.rightIcon ? this.props.rightIcon : undefined}
             iconSize={40}
+            iconStyle={styles.buttonText}
             elevation={!this.props.leftSelected ? 1 : 5}
             buttonStyle={
               !this.props.leftSelected

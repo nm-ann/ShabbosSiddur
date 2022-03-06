@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     justifyContent: 'flex-start',
-    backgroundColor: colors.secondary,
+    backgroundColor: 'white',
   },
   icon: {
     backgroundColor: colors.tertiary,

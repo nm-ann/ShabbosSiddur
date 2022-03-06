@@ -67,8 +67,8 @@ class AudioControls extends React.Component {
           buttonStyle={this.props.isPortrait ? { width: 40 } : { width: 60 }}
           iconStyle={
             this.props.shouldRepeat
-              ? { color: colors.tertiary }
-              : { color: colors.secondary }
+              ? { color: colors.primary }
+              : { color: colors.tertiary }
           }
         />
       </View>

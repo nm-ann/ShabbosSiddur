@@ -48,6 +48,7 @@ class AddToPlaylist extends React.Component {
             <TextInput
               style={{
                 width: '80%',
+                color: colors.primary,
                 borderBottomColor: colors.tertiary,
                 borderBottomWidth: 1,
                 padding: 0,
