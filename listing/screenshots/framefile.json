@@ -2,6 +2,9 @@
     "device_frame_version": "latest",
     "default": {
         "background": "./background_ipad.png",
+        "keyword": {
+            "color": "#ffffff"
+        },
         "title": {
             "color": "#ffffff"
         },
