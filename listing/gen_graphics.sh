@@ -41,20 +41,32 @@ echo "MAKING ANDROID ICONS"
 mkdir icons
 mkdir icons/android
 mkdir icons/ios
-mkdir icons/android/drawable-xxxhdpi/
-mkdir icons/android/drawable-xxhdpi/
-mkdir icons/android/drawable-xhdpi/
-mkdir icons/android/drawable-hdpi/
-mkdir icons/android/drawable-mdpi/
-mkdir icons/android/drawable-ldpi/
+mkdir icons/android/mipmap-xxxhdpi/
+mkdir icons/android/mipmap-xxhdpi/
+mkdir icons/android/mipmap-xhdpi/
+mkdir icons/android/mipmap-hdpi/
+mkdir icons/android/mipmap-mdpi/
+mkdir icons/android/mipmap-ldpi/
 
 imgName="${IMG%.*}";
-convert $IMG -resize 192x192 icons/android/drawable-xxxhdpi/$imgName.png
-convert $IMG -resize 144x144 icons/android/drawable-xxhdpi/$imgName.png
-convert $IMG -resize 96x96 icons/android/drawable-xhdpi/$imgName.png
-convert $IMG -resize 72x72 icons/android/drawable-hdpi/$imgName.png
-convert $IMG -resize 48x48 icons/android/drawable-mdpi/$imgName.png
-convert $IMG -resize 36x36 icons/android/drawable-ldpi/$imgName.png
+convert -size 192x192 xc:Black -fill White -draw 'circle 96 96 96 1' -alpha Copy mask192.png
+convert $IMG -resize 192x192 icons/android/mipmap-xxxhdpi/ic_launcher.png
+convert icons/android/mipmap-xxxhdpi/ic_launcher.png -gravity Center mask192.png -compose CopyOpacity -composite -trim icons/android/mipmap-xxxhdpi/ic_launcher_round.png
+convert -size 144x144 xc:Black -fill White -draw 'circle 72 72 72 1' -alpha Copy mask144.png
+convert $IMG -resize 144x144 icons/android/mipmap-xxhdpi/ic_launcher.png
+convert icons/android/mipmap-xxhdpi/ic_launcher.png -gravity Center mask144.png -compose CopyOpacity -composite -trim icons/android/mipmap-xxhdpi/ic_launcher_round.png
+convert -size 96x96 xc:Black -fill White -draw 'circle 48 48 48 1' -alpha Copy mask96.png
+convert $IMG -resize 96x96 icons/android/mipmap-xhdpi/ic_launcher.png
+convert icons/android/mipmap-xhdpi/ic_launcher.png -gravity Center mask96.png -compose CopyOpacity -composite -trim icons/android/mipmap-xhdpi/ic_launcher_round.png
+convert -size 72x72 xc:Black -fill White -draw 'circle 36 36 36 1' -alpha Copy mask72.png
+convert $IMG -resize 72x72 icons/android/mipmap-hdpi/ic_launcher.png
+convert icons/android/mipmap-hdpi/ic_launcher.png -gravity Center mask72.png -compose CopyOpacity -composite -trim icons/android/mipmap-hdpi/ic_launcher_round.png
+convert -size 48x48 xc:Black -fill White -draw 'circle 24 24 24 1' -alpha Copy mask48.png
+convert $IMG -resize 48x48 icons/android/mipmap-mdpi/ic_launcher.png
+convert icons/android/mipmap-mdpi/ic_launcher.png -gravity Center mask48.png -compose CopyOpacity -composite -trim icons/android/mipmap-mdpi/ic_launcher_round.png
+convert -size 36x36 xc:Black -fill White -draw 'circle 18 18 18 1' -alpha Copy mask36.png
+convert $IMG -resize 36x36 icons/android/mipmap-ldpi/ic_launcher.png
+convert icons/android/mipmap-ldpi/ic_launcher.png -gravity Center mask36.png -compose CopyOpacity -composite -trim icons/android/mipmap-ldpi/ic_launcher_round.png
 
 cp -r icons/android/* ../android/app/src/main/res/
 
