@@ -56,28 +56,30 @@ convert $IMG -resize 72x72 icons/android/drawable-hdpi/$imgName.png
 convert $IMG -resize 48x48 icons/android/drawable-mdpi/$imgName.png
 convert $IMG -resize 36x36 icons/android/drawable-ldpi/$imgName.png
 
+cp -r icons/android/* ../android/app/src/main/res/
+
 echo "MAKING IOS ICONS"
-convert $IMG -resize 20x20! icons/ios/$imgName.png-20.png
-convert $IMG -resize 22x22! icons/ios/$imgName.png-22.png
-convert $IMG -resize 29x29! icons/ios/$imgName.png-29.png
-convert $IMG -resize 40x40! icons/ios/$imgName.png-40.png
-convert $IMG -resize 44x44! icons/ios/$imgName.png-44.png
-convert $IMG -resize 48x48! icons/ios/$imgName.png-48.png
-convert $IMG -resize 55x55! icons/ios/$imgName.png-55.png
-convert $IMG -resize 58x58! icons/ios/$imgName.png-58.png
-convert $IMG -resize 60x60! icons/ios/$imgName.png-60.png
-convert $IMG -resize 66x66! icons/ios/$imgName.png-66.png
-convert $IMG -resize 76x76! icons/ios/$imgName.png-76.png
-convert $IMG -resize 80x80! icons/ios/$imgName.png-80.png
-convert $IMG -resize 87x87! icons/ios/$imgName.png-87.png
-convert $IMG -resize 88x88! icons/ios/$imgName.png-88.png
-convert $IMG -resize 120x120! icons/ios/$imgName.png-120.png
-convert $IMG -resize 152x152! icons/ios/$imgName.png-152.png
-convert $IMG -resize 167x167! icons/ios/$imgName.png-167.png
-convert $IMG -resize 172x172! icons/ios/$imgName.png-172.png
-convert $IMG -resize 180x180! icons/ios/$imgName.png-180.png
-convert $IMG -resize 196x196! icons/ios/$imgName.png-196.png
-convert $IMG -resize 1024x1024! icons/ios/$imgName.png-1024.png
+convert $IMG -resize 20x20! icons/ios/$imgName-20.png
+convert $IMG -resize 22x22! icons/ios/$imgName-22.png
+convert $IMG -resize 29x29! icons/ios/$imgName-29.png
+convert $IMG -resize 40x40! icons/ios/$imgName-40.png
+convert $IMG -resize 44x44! icons/ios/$imgName-44.png
+convert $IMG -resize 48x48! icons/ios/$imgName-48.png
+convert $IMG -resize 55x55! icons/ios/$imgName-55.png
+convert $IMG -resize 58x58! icons/ios/$imgName-58.png
+convert $IMG -resize 60x60! icons/ios/$imgName-60.png
+convert $IMG -resize 66x66! icons/ios/$imgName-66.png
+convert $IMG -resize 76x76! icons/ios/$imgName-76.png
+convert $IMG -resize 80x80! icons/ios/$imgName-80.png
+convert $IMG -resize 87x87! icons/ios/$imgName-87.png
+convert $IMG -resize 88x88! icons/ios/$imgName-88.png
+convert $IMG -resize 120x120! icons/ios/$imgName-120.png
+convert $IMG -resize 152x152! icons/ios/$imgName-152.png
+convert $IMG -resize 167x167! icons/ios/$imgName167.png
+convert $IMG -resize 172x172! icons/ios/$imgName-172.png
+convert $IMG -resize 180x180! icons/ios/$imgName-180.png
+convert $IMG -resize 196x196! icons/ios/$imgName-196.png
+convert $IMG -resize 1024x1024! icons/ios/$imgName-1024.png
 
 COLOR_GREEN='\033[0;32m'
 COLOR_DEFAULT='\033[0m'
