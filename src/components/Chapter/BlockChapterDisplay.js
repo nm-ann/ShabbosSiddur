@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import BlockChapterText from './BlockChapterText';
 
 class BlockChapterDisplay extends React.Component {
@@ -7,8 +7,10 @@ class BlockChapterDisplay extends React.Component {
     return (
       <View>
         <BlockChapterText
+          isParagraph={this.props.isParagraph}
           isHebrew={true}
           text={this.props.hebrewText}
+          showSmallText={this.props.showSmallText}
           selectedIndex={this.props.selectedIndex}
           onSelect={this.props.onSelect}
         />
@@ -16,8 +18,10 @@ class BlockChapterDisplay extends React.Component {
           <View />
         ) : (
           <BlockChapterText
+            isParagraph={this.props.isParagraph}
             isHebrew={false}
             text={this.props.englishText}
+            showSmallText={this.props.showSmallText}
             selectedIndex={this.props.selectedIndex}
             onSelect={this.props.onSelect}
           />

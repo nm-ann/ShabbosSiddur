@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ActivityIndicator, ScrollView, Platform, Dimensions} from 'react-native';
+import { View, ActivityIndicator, ScrollView, Platform, Dimensions } from 'react-native';
 import BlockChapterDisplay from '../components/Chapter/BlockChapterDisplay';
 import InlineChapterDisplay from '../components/Chapter/InlineChapterDisplay';
 import * as SettingsUtils from '../utils/SettingsUtils';
@@ -27,6 +27,8 @@ class Chapter extends React.Component {
       isPaused: true,
       isSeeking: false,
       isBookmarked: false,
+      dontAllowBackgroundAudio: false,
+      showSmallText: false,
       isPortrait: ScreenUtils.isPortrait(),
       shouldRepeat: false,
       speed: 1.0,
@@ -56,9 +58,11 @@ class Chapter extends React.Component {
             {this.state.isLoaded ? (
               this.state.blockText ? (
                 <BlockChapterDisplay
+                  isParagraph={true}
                   hebrewOnly={this.state.hebrewOnly}
                   hebrewText={this.state.hebrew}
                   englishText={this.state.english}
+                  showSmallText={this.state.showSmallText}
                   selectedIndex={this.state.selectedIndex}
                   onSelect={this.selectIndex}
                 />
@@ -67,6 +71,7 @@ class Chapter extends React.Component {
                   hebrewOnly={this.state.hebrewOnly}
                   hebrewText={this.state.hebrew}
                   englishText={this.state.english}
+                  showSmallText={this.state.showSmallText}
                   selectedIndex={this.state.selectedIndex}
                   onSelect={this.selectIndex}
                 />
@@ -85,7 +90,7 @@ class Chapter extends React.Component {
                 this.player = ref;
               }} // Store reference
               audioOnly={true}
-              // playInBackground={true}
+              playInBackground={!this.state.dontAllowBackgroundAudio}
               ignoreSilentSwitch={'ignore'}
               paused={this.state.isPaused}
               onProgress={this.progressUpdateIndex}
@@ -95,7 +100,7 @@ class Chapter extends React.Component {
               // onLoad={() => {
               // }}
               onEnd={() => {
-                this.setState({isPaused: true});
+                this.setState({ isPaused: true });
                 // MusicControl.updatePlayback({
                 //   state: MusicControl.STATE_PAUSED,
                 // });
@@ -129,7 +134,10 @@ class Chapter extends React.Component {
           paused={this.state.isPaused}
           isPortrait={this.state.isPortrait}
           speed={this.state.speed}
-          updateSpeed={(newSpeed) => this.setState({ speed: newSpeed })}
+          updateSpeed={(newSpeed) => {
+            this.setState({ speed: newSpeed });
+            SettingsUtils.changeSetting('speed', newSpeed);
+          }}
           onBackward={() => {
             if (this.state.isLoaded) {
               let nextChapter = SeekChapter.findPrevChapter(
@@ -193,12 +201,12 @@ class Chapter extends React.Component {
     if (this.state.isPaused) {
       // this.configureMusicNotif();
 
-      this.setState({isPaused: false});
+      this.setState({ isPaused: false });
       // MusicControl.updatePlayback({
       //   state: MusicControl.STATE_PLAYING,
       // });
     } else {
-      this.setState({isPaused: true});
+      this.setState({ isPaused: true });
       // MusicControl.updatePlayback({
       //   state: MusicControl.STATE_PAUSED,
       // });
@@ -225,7 +233,7 @@ class Chapter extends React.Component {
         index--;
       }
       if (oldIndex !== index) {
-        this.setState({selectedIndex: index});
+        this.setState({ selectedIndex: index });
       }
     }
   }
@@ -246,7 +254,7 @@ class Chapter extends React.Component {
       indexTime = Number(splits[index]);
     }
 
-    this.setState({selectedIndex: index, isSeeking: false});
+    this.setState({ selectedIndex: index, isSeeking: false });
   }
 
   secondsToMillis(seconds) {
@@ -271,7 +279,7 @@ class Chapter extends React.Component {
           <FontAwesomeButton
             iconName="plus"
             iconSize={20}
-            iconStyle={{paddingRight: 20}}
+            iconStyle={{ paddingRight: 20 }}
             onPress={async () => {
               if (!this.state.isPaused) {
                 this.pauseButton();
@@ -288,7 +296,7 @@ class Chapter extends React.Component {
 
       // this.configureMusicNotif();
 
-      this.setState({isLoaded: true});
+      this.setState({ isLoaded: true });
       Dimensions.addEventListener('change', () => {
         this.setState({
           isPortrait: ScreenUtils.isPortrait(),
@@ -301,9 +309,12 @@ class Chapter extends React.Component {
     let settings = await SettingsUtils.getSettings();
 
     await this.setStateAsync({
-      hebrewOnly: true, // there is no english for this app
-      blockText: settings.block, // there is no english for this app
+      hebrewOnly: settings.hebrew,
+      blockText: settings.block,
       ashk: settings.ashk,
+      dontAllowBackgroundAudio: settings.bg,
+      showSmallText: settings.smallText,
+      speed: settings.speed,
     });
   }
 
@@ -315,7 +326,7 @@ class Chapter extends React.Component {
     MusicControl.enableControl('previousTrack', true);
     // Android Specific Options
     // allows the notification to be closed on android when swiped
-    MusicControl.enableControl('closeNotification', true, {when: 'paused'});
+    MusicControl.enableControl('closeNotification', true, { when: 'paused' });
 
     // IOS Specific Options
     MusicControl.handleAudioInterruptions(true);
@@ -398,14 +409,14 @@ class Chapter extends React.Component {
       this.setState({
         number: file.chapterNumber,
         hebrew: file.hebrewText,
-        english: '',
+        english: this.state.hebrewOnly ? '' : file.englishText,
         splitsAshk: file.splitsAshk,
         splitsSeph: file.splitsSeph,
         audioUri: audioURI,
       });
     }
   }
-  
+
   componentWillUnmount() {
     Dimensions.removeEventListener('change');
   }
