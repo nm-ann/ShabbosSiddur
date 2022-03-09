@@ -30,6 +30,9 @@ for file in screenshots/ios/*_iphone.png;
 do ext="${file##*.}"; filename="${file%.*}";
 cp "$file" "${filename}_small.${ext}";
 mv "$file" "${filename}_big.${ext}";
+convert "${filename}_small.${ext}" -resize 1242x2208 "${filename}_small.${ext}"
+convert "${filename}_big.${ext}" -resize 1284x2778 "${filename}_big.${ext}"
+
 done
 
 echo "CREATING SCREENSHOTS"
@@ -92,6 +95,8 @@ convert $IMG -resize 172x172! icons/ios/$imgName-172.png
 convert $IMG -resize 180x180! icons/ios/$imgName-180.png
 convert $IMG -resize 196x196! icons/ios/$imgName-196.png
 convert $IMG -resize 1024x1024! icons/ios/$imgName-1024.png
+
+convert $IMG -resize 512x512! $imgName-512.png
 
 COLOR_GREEN='\033[0;32m'
 COLOR_DEFAULT='\033[0m'

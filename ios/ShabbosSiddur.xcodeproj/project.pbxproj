@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		660C8D2C27D51F0A005A4A62 /* StamAshkenazCLM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0574A8CE1EEC4EC9ACCCA78F /* StamAshkenazCLM.ttf */; };
 		668F322027C297AF002900AA /* shach_5_ashk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 668F31F227C297AD002900AA /* shach_5_ashk.mp3 */; };
 		668F322127C297AF002900AA /* mincha_5_ashk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 668F31F327C297AD002900AA /* mincha_5_ashk.mp3 */; };
 		668F322227C297AF002900AA /* musaf_8_ashk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 668F31F427C297AD002900AA /* musaf_8_ashk.mp3 */; };
@@ -494,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				660C8D2C27D51F0A005A4A62 /* StamAshkenazCLM.ttf in Resources */,
 				668F326E27C297BB002900AA /* musaf_3.json in Resources */,
 				668F324627C297AF002900AA /* shach_3_seph.mp3 in Resources */,
 				668F324327C297AF002900AA /* musaf_8_seph.mp3 in Resources */,
@@ -821,6 +823,7 @@
 				PRODUCT_NAME = ShabbosSiddur;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -845,6 +848,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ShabbosSiddur;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
